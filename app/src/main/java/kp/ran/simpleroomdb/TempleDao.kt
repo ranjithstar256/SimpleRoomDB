@@ -1,5 +1,6 @@
 package kp.ran.simpleroomdb
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -9,13 +10,17 @@ import androidx.room.Update
 
 @Dao
 interface TempleDAO {
+
+   /* @Query("SELECT * FROM TEMPLE")
+    fun getAllTemples(): LiveData<List<Temple>>
+*/
     @Insert
     suspend fun addTemple(temple: Temple)
 
-    @Query("SELECT * from Temple")
+  /*  @Query("SELECT * from Temple")
     suspend fun getAllTemple(): List<Temple>
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+*/
+    /*@Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(temple: Temple)
 
     @Update
@@ -23,7 +28,7 @@ interface TempleDAO {
 
     @Delete
     suspend fun delete(temple: Temple)
-
+*/
 /*    @Query("SELECT TempleName FROM temple where MainGod like :namex")
     suspend fun getloc(namex:String)*/
 

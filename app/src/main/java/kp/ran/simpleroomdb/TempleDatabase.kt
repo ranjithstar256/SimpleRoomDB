@@ -9,7 +9,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-@Database(entities = [Temple::class], version = 1)
+@Database(entities = [Temple::class], version = 1, exportSchema = false)
 abstract class TempleDatabase : RoomDatabase() {
     abstract fun templedao(): TempleDAO
 
@@ -22,7 +22,7 @@ abstract class TempleDatabase : RoomDatabase() {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
                         TempleDatabase::class.java,
-                        "smartoclass.db"
+                        "smkarrtoclahss.db"
                     ).fallbackToDestructiveMigration()
                         .build()
                     INSTANCE = instance
